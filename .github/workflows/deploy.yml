@@ -23,11 +23,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Compile resume.tex -> resume.pdf
-        uses: xu-cheng/latex-action@v3
+      - name: Compile resume.tex using Tectonic
+        uses: upb-lea/tectonic-action@v3
         with:
-          root_file: resume.tex
-          args: -interaction=nonstopmode -file-line-error
+          tex_path: 'resume.tex'
 
       - name: Assemble site (index.html + resume.pdf)
         run: |
