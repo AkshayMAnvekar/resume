@@ -68,6 +68,7 @@
         z-index: 30;
         transition: opacity 0.3s;
       }
+
       .dark .spotlight {
         background: radial-gradient(
           600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
@@ -75,6 +76,7 @@
           transparent 80%
         );
       }
+
       html:not(.dark) .spotlight {
         background: radial-gradient(
           600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
@@ -87,16 +89,20 @@
       ::-webkit-scrollbar {
         width: 8px;
       }
+
       .dark ::-webkit-scrollbar-track {
         background: #0a1120;
       }
+
       html:not(.dark) ::-webkit-scrollbar-track {
         background: #f1f5f9;
       }
+
       .dark ::-webkit-scrollbar-thumb {
         background: #1e293b;
         border-radius: 4px;
       }
+
       html:not(.dark) ::-webkit-scrollbar-thumb {
         background: #cbd5e1;
         border-radius: 4px;
@@ -108,17 +114,21 @@
           width 0.2s ease-in-out,
           background-color 0.2s ease-in-out;
       }
+
       .dark .active .nav-indicator {
         width: 4rem !important;
         background-color: #f1f5f9 !important;
       }
+
       html:not(.dark) .active .nav-indicator {
         width: 4rem !important;
         background-color: #0f172a !important;
       }
+
       .dark .active .nav-text {
         color: #f1f5f9 !important;
       }
+
       html:not(.dark) .active .nav-text {
         color: #0f172a !important;
       }
@@ -131,10 +141,12 @@
           border-color 0.2s ease,
           box-shadow 0.2s ease;
       }
+
       .dark .group-card:hover {
         background-color: rgba(30, 41, 59, 0.45);
         border-color: rgba(51, 65, 85, 0.7);
       }
+
       html:not(.dark) .group-card:hover {
         background-color: #ffffff;
         border-color: rgba(203, 213, 225, 0.9);
@@ -142,6 +154,7 @@
       }
     </style>
   </head>
+
   <body
     class="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 leading-relaxed selection:bg-teal-300 selection:text-teal-900 font-sans antialiased relative transition-colors duration-300"
   >
@@ -416,25 +429,26 @@
               <p>
                 I am an
                 <strong class="font-semibold text-slate-900 dark:text-slate-200">AI and full-stack engineer</strong>
-                with more than eight years of experience architecting software systems, enterprise cloud platforms, and
-                automated data pipelines — with a dedicated focus on applied enterprise AI since 2025.
+                with over eight years of experience building software, cloud infrastructure, and automation systems,
+                specializing in AI development since 2023.
               </p>
               <p>
-                My sweet spot is bridging raw algorithmic research and production software: designing
+                I focus on building production AI applications — from designing
                 <strong class="font-semibold text-slate-900 dark:text-slate-200"
-                  >multi-agent workflows, isolated RAG corpora, and LLM fine-tuning pipelines</strong
-                >, alongside responsive web frontends and microservices that teams actually depend on daily.
+                  >multi-agent workflows, RAG search pipelines, and LLM integrations</strong
+                >
+                to creating web interfaces and microservices that teams rely on daily.
               </p>
               <p>
                 Certified as a
                 <span class="text-teal-700 dark:text-teal-300 font-semibold"
                   >Google Cloud Professional Cloud Architect</span
-                >, I emphasize security, strict GDPR/privacy governance, single-tenant enterprise isolation, and
-                deterministic observability across complex AI orchestrations.
+                >, I build with a strong focus on data privacy, security, single-tenant isolation, and reliable cloud
+                performance.
               </p>
               <p>
-                When I’m not running local quantized models on NVIDIA Jetson hardware or engineering automated
-                pipelines, I enjoy motorcycle riding, traveling, DIY engineering projects, and badminton.
+                When I’m not working on AI systems or cloud backends, I enjoy motorcycle riding, traveling, DIY
+                projects, and badminton.
               </p>
             </div>
           </section>
@@ -505,26 +519,25 @@
                     </h3>
                     <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
                       <li>
-                        Lead end-to-end full-stack AI development and GCP architecture for enterprise productivity tools
-                        and LTI-compliant e-learning platforms.
+                        Lead end-to-end AI development and GCP architecture for enterprise productivity tools and
+                        LTI-compliant learning applications.
                       </li>
                       <li>
-                        Architected an event-driven stream processing pipeline using Google ADK and GCP Pub/Sub,
-                        orchestrating a multi-agent workflow for intent classification, entity categorization, dynamic
-                        drafting, and human-in-the-loop review.
+                        Built an event-driven stream processing pipeline using Google ADK and GCP Pub/Sub to run
+                        multi-agent workflows for intent classification, entity extraction, and human-in-the-loop
+                        review.
                       </li>
                       <li>
-                        Engineered an LTI-based AI learning system featuring per-course isolated RAG search (GCP RAG
-                        Corpus), interactive video recording, cloud video transcoding pipelines, and AI evaluation
-                        engines.
+                        Engineered an LTI-based AI learning system featuring course-isolated RAG search using GCP RAG
+                        Corpus, interactive video recording, cloud video transcoding, and AI evaluation engines.
                       </li>
                       <li>
-                        Worked on single-tenant GCP infrastructure (Firestore, Cloud Storage, Pub/Sub, GKE) with
-                        automated Harness CI/CD pipelines, enforcing strict privacy and GDPR compliance.
+                        Set up single-tenant GCP infrastructure (Firestore, Storage, Pub/Sub, GKE) with Harness CI/CD
+                        pipelines to enforce data privacy and GDPR compliance.
                       </li>
                       <li>
-                        Built web frontends with React 19, Tailwind CSS, and React Query, connected to NestJS backend
-                        services.
+                        Built responsive web frontends using React 19, Tailwind CSS, and React Query, connected to
+                        NestJS backend services.
                       </li>
                     </ul>
                     <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
@@ -600,25 +613,26 @@
                     </h3>
                     <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
                       <li>
-                        Built enterprise LLM applications using RAG, fine-tuning, embeddings, and prompt engineering,
-                        supporting over 100 users and 1,000+ daily production queries.
+                        Built production LLM applications using RAG, fine-tuning, embeddings, and prompt engineering,
+                        serving over 100 daily active users and 1,000+ queries per day.
                       </li>
                       <li>
-                        Delivered complete products with Node.js services, React and Next.js interfaces, and FastAPI
-                        endpoints that unlocked AI capabilities across business workflows.
+                        Delivered full-stack products with Node.js backends, React and Next.js interfaces, and FastAPI
+                        endpoints to bring AI capabilities to internal teams.
                       </li>
                       <li>
-                        Integrated BillDesk payment gateway to manage end-to-end payment workflows, transaction
-                        webhooks, and automated software licensing.
+                        Integrated the BillDesk payment gateway to manage payment flows, transaction webhooks, and
+                        automated software licensing.
                       </li>
                       <li>
-                        Created pipelines to collect, clean, and version structured and unstructured datasets for model
-                        training, evaluation, and production inference.
+                        Built data pipelines to collect, clean, and version structured and unstructured datasets for
+                        model training and evaluation.
                       </li>
                       <li>
-                        Worked closely with cross-functional business units to identify practical AI opportunities,
-                        define specifications, and iterate quickly with security and compliance guardrails.
+                        Worked directly with cross-functional teams to identify high-impact AI opportunities, define
+                        requirements, and launch solutions into daily workflows.
                       </li>
+                      <li>Enforced data security, privacy, and compliance across all AI services and API endpoints.</li>
                     </ul>
                     <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
                       <li
@@ -777,19 +791,24 @@
                     </h3>
                     <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
                       <li>
-                        Developed Node.js APIs (Express, Koa) for analytics reporting, authentication, payment
-                        integrations, and notification services.
+                        Developed Node.js APIs (Express/Koa) for user authentication, payment processing, notifications,
+                        data exports, and reporting dashboards.
                       </li>
                       <li>
-                        Engineered Singer.io and Meltano ETL pipelines consolidating structured and semi-structured
-                        e-commerce event streams.
+                        Built Singer.io and Meltano ETL pipelines to combine structured and unstructured data from
+                        multiple sources.
                       </li>
                       <li>
-                        Designed and indexed PostgreSQL and MongoDB schemas for high-throughput transactional queries.
+                        Designed PostgreSQL and MongoDB database schemas and optimized queries for data-intensive
+                        applications.
                       </li>
                       <li>
-                        Built web and mobile client experiences utilizing React, React Native, and Ant Design with
-                        automated AWS deployments.
+                        Managed AWS deployments, CI/CD, and monitoring, building customer-facing web and mobile apps
+                        using React, React Native, and Ant Design.
+                      </li>
+                      <li>
+                        Worked directly with product managers and clients to turn requirements into prototypes, gather
+                        feedback, and iterate rapidly.
                       </li>
                     </ul>
                     <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
@@ -855,12 +874,16 @@
                     </h3>
                     <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
                       <li>
-                        Developed internal automation software in Python, JavaScript, and VBA to eliminate manual
-                        bottlenecks across engineering teams.
+                        Built internal productivity tools in Python, JavaScript, and VBA to simplify repetitive work and
+                        automate manual tasks.
                       </li>
                       <li>
-                        Served as technical subject-matter expert, translating complex engineering principles into
-                        streamlined software specifications.
+                        Acted as a mechanical engineering subject-matter expert, turning technical requirements into
+                        practical software solutions.
+                      </li>
+                      <li>
+                        Coordinated project delivery directly with clients to clarify requirements, manage timelines,
+                        and keep projects on track.
                       </li>
                     </ul>
                     <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
