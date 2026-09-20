@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akshay Anvekar — AI &amp; Full-Stack Engineer</title>
-  <meta name="description" content="Resume of Akshay Anvekar, AI & Full-Stack Engineer based in Bengaluru." />
+  <meta name="description" content="Resume of Akshay Anvekar, AI &amp; Full-Stack Engineer based in Bengaluru." />
+  <meta name="theme-color" content="#3d5a80" />
+  <meta property="og:title" content="Akshay Anvekar — AI &amp; Full-Stack Engineer" />
+  <meta property="og:description" content="Resume of Akshay Anvekar, AI &amp; Full-Stack Engineer based in Bengaluru." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>" />
   <style>
     :root {
       --accent: #3d5a80;
@@ -36,7 +41,13 @@
       margin-top: 1rem;
       font-size: .95rem;
     }
-    nav a { color: #fff; text-decoration: none; opacity: .95; border-bottom: 1px solid rgba(255,255,255,.4); }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      opacity: .95;
+      border-bottom: 1px solid rgba(255,255,255,.4);
+      transition: opacity .2s, border-color .2s;
+    }
     nav a:hover { opacity: 1; border-color: #fff; }
     .actions { text-align: center; padding: 1.25rem; }
     .btn {
@@ -48,8 +59,9 @@
       border-radius: 6px;
       font-weight: 600;
       box-shadow: 0 1px 3px rgba(0,0,0,.15);
+      transition: background .2s, box-shadow .2s;
     }
-    .btn:hover { background: #34506f; }
+    .btn:hover { background: #34506f; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
     .viewer {
       max-width: 900px;
       margin: 0 auto 2rem;
@@ -73,34 +85,37 @@
       font-size: .85rem;
       padding: 1.5rem;
     }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <header>
     <h1>Akshay Anvekar</h1>
     <p>AI &amp; Full-Stack Engineer · Bengaluru, India</p>
-    <nav>
-      <a href="mailto:AkshayMAnvekar@gmail.com">Email</a>
-      <a href="https://github.com/AkshayMAnvekar" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/akshaymanvekar" target="_blank" rel="noopener">LinkedIn</a>
+    <nav aria-label="Contact links">
+      <a href="mailto:AkshayMAnvekar@gmail.com" aria-label="Send email">Email</a>
+      <a href="https://github.com/AkshayMAnvekar" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
+      <a href="https://www.linkedin.com/in/akshaymanvekar" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>
     </nav>
   </header>
 
   <div class="actions">
-    <a class="btn" href="resume.pdf" download="Akshay_Anvekar_Resume.pdf">Download PDF</a>
+    <a class="btn" href="resume.pdf" download="Akshay_Anvekar_Resume.pdf" aria-label="Download resume as PDF">Download PDF</a>
   </div>
 
   <div class="viewer">
-    <object data="resume.pdf" type="application/pdf">
+    <object data="resume.pdf" type="application/pdf" title="Akshay Anvekar resume PDF viewer">
       <div class="fallback">
-        <p>Your browser can’t display the embedded PDF.</p>
+        <p>Your browser can't display the embedded PDF.</p>
         <a class="btn" href="resume.pdf" download="Akshay_Anvekar_Resume.pdf">Download the resume instead</a>
       </div>
     </object>
   </div>
 
   <footer>
-    Built from LaTeX and published automatically with GitHub Actions.
+    © 2025 Akshay Anvekar · Built from LaTeX and published automatically with
+    <a href="https://github.com/AkshayMAnvekar/resume" target="_blank" rel="noopener">GitHub Actions</a>.
   </footer>
 </body>
 </html>
