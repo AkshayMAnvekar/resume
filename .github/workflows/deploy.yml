@@ -1,4 +1,4 @@
-name: Build & Deploy Resume
+name: Build & Deploy Akshay_Resume
 
 on:
   push:
@@ -23,6 +23,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate LaTeX & HTML from resume.json
+        run: node scripts/build-resume.js
+
       - name: Setup Tectonic
         uses: WtfJoke/setup-tectonic@v3
         with:
@@ -36,11 +44,12 @@ jobs:
           mkdir -p _site
           cp -r site/. _site/
           cp resume.pdf _site/resume.pdf
+          cp resume.pdf _site/Akshay_Resume.pdf
 
       - name: Upload PDF as a downloadable artifact
         uses: actions/upload-artifact@v4
         with:
-          name: resume-pdf
+          name: Akshay_Resume
           path: resume.pdf
           retention-days: 5
 

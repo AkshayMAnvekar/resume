@@ -4,14 +4,14 @@ LaTeX resume that builds to a PDF and publishes a small website, both automatica
 
 ## Structure
 
-| Path | Purpose |
-|------|---------|
-| `resume.tex` | Main document |
-| `_header.tex` | Contact header |
-| `TLCresume.sty` | Style / formatting |
-| `sections/` | Content (objective, skills, experience, projects, education, activities, hobbies) |
-| `site/index.html` | Landing page that embeds the compiled PDF |
-| `.github/workflows/deploy.yml` | Builds the PDF and deploys the site to GitHub Pages |
+| Path                           | Purpose                                                                           |
+| ------------------------------ | --------------------------------------------------------------------------------- |
+| `resume.tex`                   | Main document                                                                     |
+| `_header.tex`                  | Contact header                                                                    |
+| `TLCresume.sty`                | Style / formatting                                                                |
+| `sections/`                    | Content (objective, skills, experience, projects, education, activities, hobbies) |
+| `site/index.html`              | Landing page that embeds the compiled PDF                                         |
+| `.github/workflows/deploy.yml` | Builds the PDF and deploys the site to GitHub Pages                               |
 
 ## How it works
 

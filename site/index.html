@@ -1,807 +1,1553 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="dark scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Akshay Anvekar — AI &amp; Full-Stack Engineer</title>
-  <meta name="description" content="Resume and portfolio of Akshay Anvekar, AI &amp; Full-Stack Engineer based in Bengaluru, specializing in LLMs, Multi-Agent Systems, and Cloud Platforms." />
-  <meta name="theme-color" content="#0b1120" />
-  <meta property="og:title" content="Akshay Anvekar — AI &amp; Full-Stack Engineer" />
-  <meta property="og:description" content="Portfolio of Akshay Anvekar, AI &amp; Full-Stack Engineer specializing in LLMs, Multi-Agent Systems, RAG, and Cloud Architecture." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            slate: {
-              850: '#151f32',
-              900: '#0f172a',
-              950: '#0a1120',
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshay Anvekar — AI &amp; Full-Stack Engineer</title>
+    <meta
+      name="description"
+      content="Resume and portfolio of Akshay Anvekar, AI &amp; Full-Stack Engineer based in Bengaluru, specializing in LLMs, Multi-Agent Systems, and Cloud Platforms."
+    />
+    <meta name="theme-color" content="#0b1120" />
+    <meta property="og:title" content="Akshay Anvekar — AI &amp; Full-Stack Engineer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Akshay Anvekar, AI &amp; Full-Stack Engineer specializing in LLMs, Multi-Agent Systems, RAG, and Cloud Architecture."
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
             },
-            teal: {
-              300: '#5eead4',
-              400: '#2dd4bf',
-              500: '#14b8a6',
-              600: '#0d9488',
-              700: '#0f766e',
-              900: '#134e4a',
-              950: '#042f2e',
-            }
-          }
-        }
+            colors: {
+              slate: {
+                850: '#151f32',
+                900: '#0f172a',
+                950: '#0a1120',
+              },
+              teal: {
+                300: '#5eead4',
+                400: '#2dd4bf',
+                500: '#14b8a6',
+                600: '#0d9488',
+                700: '#0f766e',
+                900: '#134e4a',
+                950: '#042f2e',
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Signature interactive cursor spotlight */
+      .spotlight {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 30;
+        transition: opacity 0.3s;
       }
-    }
-  </script>
-  <style>
-    /* Signature interactive cursor spotlight */
-    .spotlight {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 30;
-      transition: opacity 0.3s;
-    }
-    .dark .spotlight {
-      background: radial-gradient(600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), rgba(45, 212, 191, 0.12), transparent 80%);
-    }
-    html:not(.dark) .spotlight {
-      background: radial-gradient(600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), rgba(13, 148, 136, 0.08), transparent 80%);
-    }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    .dark ::-webkit-scrollbar-track {
-      background: #0a1120;
-    }
-    html:not(.dark) ::-webkit-scrollbar-track {
-      background: #f1f5f9;
-    }
-    .dark ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 4px;
-    }
-    html:not(.dark) ::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
-      border-radius: 4px;
-    }
+      .dark .spotlight {
+        background: radial-gradient(
+          600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+          rgba(45, 212, 191, 0.12),
+          transparent 80%
+        );
+      }
+      html:not(.dark) .spotlight {
+        background: radial-gradient(
+          600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+          rgba(13, 148, 136, 0.08),
+          transparent 80%
+        );
+      }
 
-    /* Active nav item transition */
-    .nav-indicator {
-      transition: width 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    }
-    .dark .active .nav-indicator {
-      width: 4rem !important;
-      background-color: #f1f5f9 !important;
-    }
-    html:not(.dark) .active .nav-indicator {
-      width: 4rem !important;
-      background-color: #0f172a !important;
-    }
-    .dark .active .nav-text {
-      color: #f1f5f9 !important;
-    }
-    html:not(.dark) .active .nav-text {
-      color: #0f172a !important;
-    }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #0a1120;
+      }
+      html:not(.dark) ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 4px;
+      }
+      html:not(.dark) ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
 
-    /* Card hover transition */
-    .group-card {
-      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .dark .group-card:hover {
-      background-color: rgba(30, 41, 59, 0.45);
-      border-color: rgba(51, 65, 85, 0.7);
-    }
-    html:not(.dark) .group-card:hover {
-      background-color: #ffffff;
-      border-color: rgba(203, 213, 225, 0.9);
-      box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06);
-    }
-  </style>
-</head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 leading-relaxed selection:bg-teal-300 selection:text-teal-900 font-sans antialiased relative transition-colors duration-300">
-  <!-- Interactive Cursor Spotlight -->
-  <div id="spotlight" class="spotlight" aria-hidden="true"></div>
+      /* Active nav item transition */
+      .nav-indicator {
+        transition:
+          width 0.2s ease-in-out,
+          background-color 0.2s ease-in-out;
+      }
+      .dark .active .nav-indicator {
+        width: 4rem !important;
+        background-color: #f1f5f9 !important;
+      }
+      html:not(.dark) .active .nav-indicator {
+        width: 4rem !important;
+        background-color: #0f172a !important;
+      }
+      .dark .active .nav-text {
+        color: #f1f5f9 !important;
+      }
+      html:not(.dark) .active .nav-text {
+        color: #0f172a !important;
+      }
 
-  <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-    <div class="lg:flex lg:justify-between lg:gap-4">
-      
-      <!-- ==================== LEFT COLUMN (STICKY HEADER & NAV) ==================== -->
-      <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24" id="main-header">
-        <div>
-          <!-- Name & Role -->
-          <h1 class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-            <a href="/" id="header-name">Akshay Anvekar</a>
-          </h1>
-          <h2 class="mt-3 text-lg font-medium tracking-tight text-teal-700 dark:text-teal-300 sm:text-xl" id="header-role">
-            Senior AI &amp; Full-Stack Engineer
-          </h2>
-          <p class="mt-4 max-w-xs text-slate-600 dark:text-slate-400 leading-normal" id="header-tagline">
-            I architect and build enterprise multi-agent workflows, production RAG pipelines, and scalable cloud platforms.
-          </p>
+      /* Card hover transition */
+      .group-card {
+        transition:
+          transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .dark .group-card:hover {
+        background-color: rgba(30, 41, 59, 0.45);
+        border-color: rgba(51, 65, 85, 0.7);
+      }
+      html:not(.dark) .group-card:hover {
+        background-color: #ffffff;
+        border-color: rgba(203, 213, 225, 0.9);
+        box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 leading-relaxed selection:bg-teal-300 selection:text-teal-900 font-sans antialiased relative transition-colors duration-300"
+  >
+    <!-- Interactive Cursor Spotlight -->
+    <div id="spotlight" class="spotlight" aria-hidden="true"></div>
 
-          <!-- Navigation Links with Animated Expanding Bar Indicators -->
-          <nav class="nav hidden lg:block" aria-label="In-page jump links" id="desktop-nav">
-            <ul class="mt-14 w-max">
+    <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+      <div class="lg:flex lg:justify-between lg:gap-4">
+        <!-- ==================== LEFT COLUMN (STICKY HEADER & NAV) ==================== -->
+        <header
+          class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24"
+          id="main-header"
+        >
+          <div>
+            <!-- Name & Role -->
+            <h1 class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
+              <a href="/" id="header-name">Akshay Anvekar</a>
+            </h1>
+            <h2
+              class="mt-3 text-lg font-medium tracking-tight text-teal-700 dark:text-teal-300 sm:text-xl"
+              id="header-role"
+            >
+              Senior AI &amp; Full-Stack Engineer
+            </h2>
+            <p class="mt-4 max-w-xs text-slate-600 dark:text-slate-400 leading-normal" id="header-tagline">
+              I architect and build enterprise multi-agent workflows, production RAG pipelines, and scalable cloud
+              platforms.
+            </p>
+
+            <!-- Navigation Links with Animated Expanding Bar Indicators -->
+            <nav class="nav hidden lg:block" aria-label="In-page jump links" id="desktop-nav">
+              <ul class="mt-14 w-max">
+                <li>
+                  <a class="group flex items-center py-3 active" href="#about" id="nav-about">
+                    <span
+                      class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"
+                    ></span>
+                    <span
+                      class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200"
+                      >About</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a class="group flex items-center py-3" href="#experience" id="nav-experience">
+                    <span
+                      class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"
+                    ></span>
+                    <span
+                      class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200"
+                      >Experience</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a class="group flex items-center py-3" href="#projects" id="nav-projects">
+                    <span
+                      class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"
+                    ></span>
+                    <span
+                      class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200"
+                      >Projects</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a class="group flex items-center py-3" href="#skills" id="nav-skills">
+                    <span
+                      class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"
+                    ></span>
+                    <span
+                      class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200"
+                      >Skills &amp; Architecture</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a class="group flex items-center py-3" href="#education" id="nav-education">
+                    <span
+                      class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"
+                    ></span>
+                    <span
+                      class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200"
+                      >Education</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Social Links, Resume Actions & Theme Toggle -->
+          <div>
+            <!-- Quick Action Buttons -->
+            <div class="mb-6 flex flex-wrap items-center gap-2.5">
+              <!-- Theme Toggle Button -->
+              <button
+                id="theme-toggle-btn"
+                class="inline-flex items-center gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-xs"
+                aria-label="Toggle light/dark theme"
+                title="Toggle Theme"
+              >
+                <svg
+                  id="theme-sun-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-3.5 h-3.5 hidden dark:block text-amber-400"
+                >
+                  <path
+                    d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6zM15.657 5.404a.75.75 0 10-1.06-1.06l-1.061 1.06a.75.75 0 001.06 1.06l1.06-1.06zM6.464 14.596a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 001.06 1.06l1.06-1.06zM18 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0118 10zM5 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 015 10zM14.596 15.657a.75.75 0 001.06-1.06l-1.06-1.061a.75.75 0 10-1.06 1.06l1.06 1.06zM5.404 6.464a.75.75 0 001.06-1.06l-1.06-1.06a.75.75 0 10-1.06 1.06l1.06 1.06z"
+                  />
+                </svg>
+                <svg
+                  id="theme-moon-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-3.5 h-3.5 block dark:hidden text-slate-700"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.455 2.004a.75.75 0 01.26.77 7 7 0 009.958 7.967.75.75 0 011.067.853A8.5 8.5 0 116.647 1.921a.75.75 0 01.808.083z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span id="theme-status-text" class="text-[11px] font-semibold tracking-wide uppercase">Theme</span>
+              </button>
+
+              <!-- Download PDF button -->
+              <a
+                href="resume.pdf"
+                download="Akshay_Resume.pdf"
+                id="btn-download-pdf-sidebar"
+                class="inline-flex items-center gap-1.5 rounded-lg border border-teal-600/30 dark:border-teal-400/30 bg-teal-50 dark:bg-teal-500/10 px-3 py-1.5 text-xs font-medium text-teal-800 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-500/20 transition-colors shadow-xs"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Resume PDF
+              </a>
+
+              <!-- Preview Modal button -->
+              <button
+                id="btn-open-pdf-modal"
+                class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-850 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-slate-400 dark:hover:bg-slate-800 transition-colors shadow-xs"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
+                  <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Preview
+              </button>
+            </div>
+
+            <!-- Social links -->
+            <ul class="flex items-center gap-5" aria-label="Social media" id="social-links">
               <li>
-                <a class="group flex items-center py-3 active" href="#about" id="nav-about">
-                  <span class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"></span>
-                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200">About</span>
+                <a
+                  class="block text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+                  href="https://github.com/AkshayMAnvekar"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="GitHub (opens in a new tab)"
+                  id="link-github"
+                >
+                  <span class="sr-only">GitHub</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                    />
+                  </svg>
                 </a>
               </li>
               <li>
-                <a class="group flex items-center py-3" href="#experience" id="nav-experience">
-                  <span class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"></span>
-                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200">Experience</span>
+                <a
+                  class="block text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+                  href="https://www.linkedin.com/in/akshaymanvekar"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="LinkedIn (opens in a new tab)"
+                  id="link-linkedin"
+                >
+                  <span class="sr-only">LinkedIn</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
                 </a>
               </li>
               <li>
-                <a class="group flex items-center py-3" href="#projects" id="nav-projects">
-                  <span class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"></span>
-                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200">Projects</span>
+                <a
+                  class="block text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+                  href="mailto:AkshayMAnvekar@gmail.com"
+                  aria-label="Send Email"
+                  id="link-email"
+                >
+                  <span class="sr-only">Email</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                  >
+                    <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                    <path
+                      d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+                    />
+                  </svg>
                 </a>
               </li>
               <li>
-                <a class="group flex items-center py-3" href="#skills" id="nav-skills">
-                  <span class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"></span>
-                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200">Skills &amp; Architecture</span>
-                </a>
-              </li>
-              <li>
-                <a class="group flex items-center py-3" href="#education" id="nav-education">
-                  <span class="nav-indicator mr-4 h-px w-8 bg-slate-400 dark:bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200"></span>
-                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200">Education</span>
+                <a
+                  class="block text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+                  href="tel:+919035320309"
+                  aria-label="Phone: +91 9035320309"
+                  id="link-phone"
+                  title="+91 9035320309"
+                >
+                  <span class="sr-only">Phone</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
                 </a>
               </li>
             </ul>
-          </nav>
-        </div>
-
-        <!-- Social Links, Resume Actions & Theme Toggle -->
-        <div>
-          <!-- Quick Action Buttons -->
-          <div class="mb-6 flex flex-wrap items-center gap-2.5">
-            <!-- Theme Toggle Button -->
-            <button id="theme-toggle-btn" class="inline-flex items-center gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 hover:border-teal-500 dark:hover:border-teal-400 transition-all shadow-xs" aria-label="Toggle light/dark theme" title="Toggle Theme">
-              <svg id="theme-sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5 hidden dark:block text-amber-400">
-                <path d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6zM15.657 5.404a.75.75 0 10-1.06-1.06l-1.061 1.06a.75.75 0 001.06 1.06l1.06-1.06zM6.464 14.596a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 001.06 1.06l1.06-1.06zM18 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0118 10zM5 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 015 10zM14.596 15.657a.75.75 0 001.06-1.06l-1.06-1.061a.75.75 0 10-1.06 1.06l1.06 1.06zM5.404 6.464a.75.75 0 001.06-1.06l-1.06-1.06a.75.75 0 10-1.06 1.06l1.06 1.06z" />
-              </svg>
-              <svg id="theme-moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5 block dark:hidden text-slate-700">
-                <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 01.26.77 7 7 0 009.958 7.967.75.75 0 011.067.853A8.5 8.5 0 116.647 1.921a.75.75 0 01.808.083z" clip-rule="evenodd" />
-              </svg>
-              <span id="theme-status-text" class="text-[11px] font-semibold tracking-wide uppercase">Theme</span>
-            </button>
-
-            <!-- Download PDF button -->
-            <a href="resume.pdf" download="Akshay_Anvekar_Resume.pdf" id="btn-download-pdf-sidebar" class="inline-flex items-center gap-1.5 rounded-lg border border-teal-600/30 dark:border-teal-400/30 bg-teal-50 dark:bg-teal-500/10 px-3 py-1.5 text-xs font-medium text-teal-800 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-500/20 transition-colors shadow-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
-                <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
-              </svg>
-              Resume PDF
-            </a>
-
-            <!-- Preview Modal button -->
-            <button id="btn-open-pdf-modal" class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-850 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-slate-400 dark:hover:bg-slate-800 transition-colors shadow-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
-                <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
-                <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
-              </svg>
-              Preview
-            </button>
           </div>
+        </header>
 
-          <!-- Social links -->
-          <ul class="flex items-center gap-5" aria-label="Social media" id="social-links">
-            <li>
-              <a class="block text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors" href="https://github.com/AkshayMAnvekar" target="_blank" rel="noreferrer noopener" aria-label="GitHub (opens in a new tab)" id="link-github">
-                <span class="sr-only">GitHub</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-6 w-6" aria-hidden="true">
-                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="block text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors" href="https://www.linkedin.com/in/akshaymanvekar" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn (opens in a new tab)" id="link-linkedin">
-                <span class="sr-only">LinkedIn</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="block text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors" href="mailto:AkshayMAnvekar@gmail.com" aria-label="Send Email" id="link-email">
-                <span class="sr-only">Email</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
-                  <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                  <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="block text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200 transition-colors" href="tel:+919035320309" aria-label="Phone: +91 9035320309" id="link-phone" title="+91 9035320309">
-                <span class="sr-only">Phone</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </header>
+        <!-- ==================== RIGHT COLUMN (MAIN CONTENT) ==================== -->
+        <main class="pt-24 lg:w-1/2 lg:py-24" id="content">
+          <!-- SECTION: ABOUT -->
+          <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">About</h2>
+            </div>
+            <div class="space-y-4 text-slate-600 dark:text-slate-400">
+              <p>
+                I am an
+                <strong class="font-semibold text-slate-900 dark:text-slate-200">AI and full-stack engineer</strong>
+                with more than eight years of experience architecting software systems, enterprise cloud platforms, and
+                automated data pipelines — with a dedicated focus on applied enterprise AI since 2025.
+              </p>
+              <p>
+                My sweet spot is bridging raw algorithmic research and production software: designing
+                <strong class="font-semibold text-slate-900 dark:text-slate-200"
+                  >multi-agent workflows, isolated RAG corpora, and LLM fine-tuning pipelines</strong
+                >, alongside responsive web frontends and microservices that teams actually depend on daily.
+              </p>
+              <p>
+                Certified as a
+                <span class="text-teal-700 dark:text-teal-300 font-semibold"
+                  >Google Cloud Professional Cloud Architect</span
+                >, I emphasize security, strict GDPR/privacy governance, single-tenant enterprise isolation, and
+                deterministic observability across complex AI orchestrations.
+              </p>
+              <p>
+                When I’m not running local quantized models on NVIDIA Jetson hardware or engineering automated
+                pipelines, I enjoy motorcycle riding, traveling, DIY engineering projects, and badminton.
+              </p>
+            </div>
+          </section>
 
-      <!-- ==================== RIGHT COLUMN (MAIN CONTENT) ==================== -->
-      <main class="pt-24 lg:w-1/2 lg:py-24" id="content">
-        
-        <!-- SECTION: ABOUT -->
-        <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
-          <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">About</h2>
-          </div>
-          <div class="space-y-4 text-slate-600 dark:text-slate-400">
-            <p>
-              I am an <strong class="font-semibold text-slate-900 dark:text-slate-200">AI and full-stack engineer</strong> with more than eight years of experience architecting software systems, enterprise cloud platforms, and automated data pipelines — with a dedicated focus on applied enterprise AI since 2025.
-            </p>
-            <p>
-              My sweet spot is bridging raw algorithmic research and production software: designing <strong class="font-semibold text-slate-900 dark:text-slate-200">multi-agent workflows, isolated RAG corpora, and LLM fine-tuning pipelines</strong>, alongside responsive web frontends and microservices that teams actually depend on daily.
-            </p>
-            <p>
-              Certified as a <span class="text-teal-700 dark:text-teal-300 font-semibold">Google Cloud Professional Cloud Architect</span>, I emphasize security, strict GDPR/privacy governance, single-tenant enterprise isolation, and deterministic observability across complex AI orchestrations.
-            </p>
-            <p>
-              When I’m not running local quantized models on NVIDIA Jetson hardware or engineering automated pipelines, I enjoy motorcycle riding, traveling, DIY engineering projects, and badminton.
-            </p>
-          </div>
-        </section>
+          <!-- SECTION: EXPERIENCE -->
+          <section
+            id="experience"
+            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            aria-label="Work experience"
+          >
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">Experience</h2>
+            </div>
 
-        <!-- SECTION: EXPERIENCE -->
-        <section id="experience" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
-          <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">Experience</h2>
-          </div>
-
-          <ol class="group/list">
-            
-            <!-- Trantor Inc -->
-            <li class="mb-12">
-              <div class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent" id="exp-trantor">
-                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono" aria-label="Jan 2026 to Present">
-                  Jan 2026 — Present
-                </header>
-                <div class="z-10 sm:col-span-6">
-                  <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
-                    <div>
-                      <a class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 focus-visible:text-teal-700 group/link text-base" href="https://www.trantorinc.com" target="_blank" rel="noreferrer noopener" aria-label="Senior AI Engineer at Trantor Inc">
-                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                        <span>
-                          Senior AI Engineer · <span class="inline-block">Trantor Inc
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
-                            </svg>
+            <ol class="group/list">
+              <!-- Trantor Inc -->
+              <li class="mb-12">
+                <div
+                  class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent"
+                  id="exp-trantor"
+                >
+                  <header
+                    class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono"
+                    aria-label="Jan 2026 to Present"
+                  >
+                    Jan 2026 — Present
+                  </header>
+                  <div class="z-10 sm:col-span-6">
+                    <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
+                      <div>
+                        <a
+                          class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 focus-visible:text-teal-700 group/link text-base"
+                          href="https://www.trantorinc.com"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          aria-label="Senior AI Engineer at Trantor Inc"
+                        >
+                          <span
+                            class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"
+                          ></span>
+                          <span>
+                            Senior AI Engineer ·
+                            <span class="inline-block"
+                              >Trantor Inc
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                  clip-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
                           </span>
+                        </a>
+                      </div>
+                      <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                        Client: <span class="text-slate-700 dark:text-slate-300 font-medium">Palo Alto Networks</span> ·
+                        Bengaluru, Karnataka
+                      </div>
+                    </h3>
+                    <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
+                      <li>
+                        Lead end-to-end full-stack AI development and GCP architecture for enterprise productivity tools
+                        and LTI-compliant e-learning platforms.
+                      </li>
+                      <li>
+                        Architected an event-driven stream processing pipeline using Google ADK and GCP Pub/Sub,
+                        orchestrating a multi-agent workflow for intent classification, entity categorization, dynamic
+                        drafting, and human-in-the-loop review.
+                      </li>
+                      <li>
+                        Engineered an LTI-based AI learning system featuring per-course isolated RAG search (GCP RAG
+                        Corpus), interactive video recording, cloud video transcoding pipelines, and AI evaluation
+                        engines.
+                      </li>
+                      <li>
+                        Worked on single-tenant GCP infrastructure (Firestore, Cloud Storage, Pub/Sub, GKE) with
+                        automated Harness CI/CD pipelines, enforcing strict privacy and GDPR compliance.
+                      </li>
+                      <li>
+                        Built web frontends with React 19, Tailwind CSS, and React Query, connected to NestJS backend
+                        services.
+                      </li>
+                    </ul>
+                    <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Vertex AI (Gemini / ADK)
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        GCP RAG Corpus
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        NestJS
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        React 19
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        TypeScript
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        GKE &amp; Pub/Sub
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Firestore
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Harness CI/CD
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <!-- DADB -->
+              <li class="mb-12">
+                <div
+                  class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent"
+                  id="exp-dadb"
+                >
+                  <header
+                    class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono"
+                    aria-label="Feb 2025 to Jan 2026"
+                  >
+                    Feb 2025 — Jan 2026
+                  </header>
+                  <div class="z-10 sm:col-span-6">
+                    <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
+                      <div>
+                        <span
+                          class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 group/link text-base"
+                        >
+                          <span>AI Developer · <span class="inline-block">DADB</span></span>
                         </span>
-                      </a>
-                    </div>
-                    <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
-                      Client: <span class="text-slate-700 dark:text-slate-300 font-medium">Palo Alto Networks</span> · Bengaluru, Karnataka
-                    </div>
-                  </h3>
-                  <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
-                    <li>Lead end-to-end full-stack AI development and GCP architecture for enterprise productivity and AI coaching platforms.</li>
-                    <li>Architected an email automation platform featuring a 6-stage Google ADK multi-agent workflow (<code class="text-xs font-mono text-teal-800 dark:text-teal-300 bg-teal-100 dark:bg-teal-950/60 px-1 py-0.5 rounded">SequentialAgent</code>) for multi-intent triage, identifier extraction, automated drafting, and Gmail Pub/Sub integration with a Human-In-The-Loop review dashboard.</li>
-                    <li>Developed an LMS-integrated AI Coaching platform with per-course isolated RAG vector search (GCP RAG Corpus), configurable roleplay simulations, survey modules, and secure JWT/Okta authentication.</li>
-                    <li>Designed single-tenant GCP infrastructure (Firestore, Cloud Storage, Pub/Sub, GKE) with automated Harness CI/CD pipelines, enforcing strict privacy and GDPR compliance.</li>
-                    <li>Built responsive SPA micro-frontends using React 19, Vite 7, Tailwind CSS, and React Query, integrated with modular NestJS backend microservices.</li>
-                  </ul>
-                  <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Vertex AI (Gemini / ADK)</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">GCP RAG Corpus</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">NestJS</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">React 19</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">TypeScript</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">GKE &amp; Pub/Sub</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Firestore</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Harness CI/CD</li>
-                  </ul>
+                      </div>
+                      <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                        Bengaluru, Karnataka
+                      </div>
+                    </h3>
+                    <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
+                      <li>
+                        Built enterprise LLM applications using RAG, fine-tuning, embeddings, and prompt engineering,
+                        supporting over 100 users and 1,000+ daily production queries.
+                      </li>
+                      <li>
+                        Delivered complete products with Node.js services, React and Next.js interfaces, and FastAPI
+                        endpoints that unlocked AI capabilities across business workflows.
+                      </li>
+                      <li>
+                        Integrated BillDesk payment gateway to manage end-to-end payment workflows, transaction
+                        webhooks, and automated software licensing.
+                      </li>
+                      <li>
+                        Created pipelines to collect, clean, and version structured and unstructured datasets for model
+                        training, evaluation, and production inference.
+                      </li>
+                      <li>
+                        Worked closely with cross-functional business units to identify practical AI opportunities,
+                        define specifications, and iterate quickly with security and compliance guardrails.
+                      </li>
+                    </ul>
+                    <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Python
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        LangChain
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Hugging Face
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        FastAPI
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Next.js
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        PostgreSQL
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Docker
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- DADB -->
-            <li class="mb-12">
-              <div class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent" id="exp-dadb">
-                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono" aria-label="Feb 2025 to Jan 2026">
-                  Feb 2025 — Jan 2026
-                </header>
-                <div class="z-10 sm:col-span-6">
-                  <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
-                    <div>
-                      <span class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 group/link text-base">
-                        <span>AI Developer · <span class="inline-block">DADB</span></span>
-                      </span>
-                    </div>
-                    <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">Bengaluru, Karnataka</div>
-                  </h3>
-                  <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
-                    <li>Built enterprise LLM applications using RAG, fine-tuning, embeddings, and prompt engineering, supporting over 100 users and 1,000+ daily production queries.</li>
-                    <li>Delivered complete products with Node.js services, React and Next.js interfaces, and FastAPI endpoints that unlocked AI capabilities across business workflows.</li>
-                    <li>Created pipelines to collect, clean, and version structured and unstructured datasets for model training, evaluation, and production inference.</li>
-                    <li>Worked closely with cross-functional business units to identify practical AI opportunities, define specifications, and iterate quickly with security and compliance guardrails.</li>
-                  </ul>
-                  <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Python</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">LangChain</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Hugging Face</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">FastAPI</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Next.js</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">PostgreSQL</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Docker</li>
-                  </ul>
+              <!-- GE Appliances -->
+              <li class="mb-12">
+                <div
+                  class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent"
+                  id="exp-ge"
+                >
+                  <header
+                    class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono"
+                    aria-label="Jan 2021 to Feb 2025"
+                  >
+                    Jan 2021 — Feb 2025
+                  </header>
+                  <div class="z-10 sm:col-span-6">
+                    <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
+                      <div>
+                        <span
+                          class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 group/link text-base"
+                        >
+                          <span>Cloud Engineer · <span class="inline-block">GE Appliances</span></span>
+                        </span>
+                      </div>
+                      <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                        Bengaluru, Karnataka
+                      </div>
+                    </h3>
+                    <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
+                      <li>
+                        Developed full-stack web applications with Java, React, and Next.js, and built a real-time
+                        ride-hailing mobile application using Flutter.
+                      </li>
+                      <li>
+                        Provisioned and managed multi-cloud infrastructure on AWS and GCP using Terraform, automating
+                        CI/CD deployment pipelines with GitHub Actions.
+                      </li>
+                      <li>
+                        Engineered real-time ETL pipelines for enterprise data warehouse migration from
+                        <strong class="text-slate-800 dark:text-slate-300">Vertica to BigQuery</strong> using Striim,
+                        creating Tableau dashboards and operational ML models.
+                      </li>
+                      <li>
+                        Architected enterprise UiPath RPA ecosystem, establishing shared automation standards,
+                        governance frameworks, and change management processes across business units.
+                      </li>
+                      <li>
+                        Automated core business processes in Oracle EBS using PL/SQL, Java, and OSB concurrent programs,
+                        improving platform performance testing capabilities.
+                      </li>
+                    </ul>
+                    <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        GCP &amp; AWS
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        BigQuery
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Java &amp; Spring Boot
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        React
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Terraform
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Striim
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        UiPath RPA
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- GE Appliances -->
-            <li class="mb-12">
-              <div class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent" id="exp-ge">
-                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono" aria-label="Jan 2021 to Feb 2025">
-                  Jan 2021 — Feb 2025
-                </header>
-                <div class="z-10 sm:col-span-6">
-                  <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
-                    <div>
-                      <span class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 group/link text-base">
-                        <span>Cloud Engineer · <span class="inline-block">GE Appliances</span></span>
-                      </span>
-                    </div>
-                    <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">Bengaluru, Karnataka</div>
-                  </h3>
-                  <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
-                    <li>Engineered Java/Spring Boot backend microservices and React/Next.js interfaces for enterprise digital platforms.</li>
-                    <li>Managed multi-cloud AWS and GCP infrastructure, optimizing reliability, security posture, and cloud compute expenditure.</li>
-                    <li>Automated build and deployment workflows with GitHub Actions CI/CD pipelines.</li>
-                    <li>Designed enterprise UiPath RPA automation architecture and established shared automation governance across departments.</li>
-                    <li>Executed the enterprise data warehouse migration from <strong class="text-slate-800 dark:text-slate-300">Vertica to BigQuery</strong>, utilizing Striim for real-time streaming ETL.</li>
-                    <li>Built interactive Tableau analytics dashboards and applied machine learning models to operational telemetry.</li>
-                  </ul>
-                  <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">GCP &amp; AWS</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">BigQuery</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Java &amp; Spring Boot</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">React</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Terraform</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Striim</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">UiPath RPA</li>
-                  </ul>
+              <!-- Simplifi Commerce -->
+              <li class="mb-12">
+                <div
+                  class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent"
+                  id="exp-simplifi"
+                >
+                  <header
+                    class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono"
+                    aria-label="Apr 2020 to Jan 2021"
+                  >
+                    Apr 2020 — Jan 2021
+                  </header>
+                  <div class="z-10 sm:col-span-6">
+                    <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
+                      <div>
+                        <span
+                          class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 group/link text-base"
+                        >
+                          <span>Software Engineer · <span class="inline-block">Simplifi Commerce</span></span>
+                        </span>
+                      </div>
+                      <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                        Bengaluru, Karnataka
+                      </div>
+                    </h3>
+                    <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
+                      <li>
+                        Developed Node.js APIs (Express, Koa) for analytics reporting, authentication, payment
+                        integrations, and notification services.
+                      </li>
+                      <li>
+                        Engineered Singer.io and Meltano ETL pipelines consolidating structured and semi-structured
+                        e-commerce event streams.
+                      </li>
+                      <li>
+                        Designed and indexed PostgreSQL and MongoDB schemas for high-throughput transactional queries.
+                      </li>
+                      <li>
+                        Built web and mobile client experiences utilizing React, React Native, and Ant Design with
+                        automated AWS deployments.
+                      </li>
+                    </ul>
+                    <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Node.js
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        React Native
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        MongoDB
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        PostgreSQL
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        AWS
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Singer &amp; Meltano
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- Simplifi Commerce -->
-            <li class="mb-12">
-              <div class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent" id="exp-simplifi">
-                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono" aria-label="Apr 2020 to Jan 2021">
-                  Apr 2020 — Jan 2021
-                </header>
-                <div class="z-10 sm:col-span-6">
-                  <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
-                    <div>
-                      <span class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 group/link text-base">
-                        <span>Software Engineer · <span class="inline-block">Simplifi Commerce</span></span>
-                      </span>
-                    </div>
-                    <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">Bengaluru, Karnataka</div>
-                  </h3>
-                  <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
-                    <li>Developed Node.js APIs (Express, Koa) for analytics reporting, authentication, payment integrations, and notification services.</li>
-                    <li>Engineered Singer.io and Meltano ETL pipelines consolidating structured and semi-structured e-commerce event streams.</li>
-                    <li>Designed and indexed PostgreSQL and MongoDB schemas for high-throughput transactional queries.</li>
-                    <li>Built web and mobile client experiences utilizing React, React Native, and Ant Design with automated AWS deployments.</li>
-                  </ul>
-                  <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Node.js</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">React Native</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">MongoDB</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">PostgreSQL</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">AWS</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Singer &amp; Meltano</li>
-                  </ul>
+              <!-- AnsrSource -->
+              <li class="mb-12">
+                <div
+                  class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent"
+                  id="exp-ansrsource"
+                >
+                  <header
+                    class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono"
+                    aria-label="Dec 2017 to Apr 2020"
+                  >
+                    Dec 2017 — Apr 2020
+                  </header>
+                  <div class="z-10 sm:col-span-6">
+                    <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
+                      <div>
+                        <span
+                          class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 group/link text-base"
+                        >
+                          <span>Software Engineer · <span class="inline-block">AnsrSource</span></span>
+                        </span>
+                      </div>
+                      <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                        Bengaluru, Karnataka
+                      </div>
+                    </h3>
+                    <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
+                      <li>
+                        Developed internal automation software in Python, JavaScript, and VBA to eliminate manual
+                        bottlenecks across engineering teams.
+                      </li>
+                      <li>
+                        Served as technical subject-matter expert, translating complex engineering principles into
+                        streamlined software specifications.
+                      </li>
+                    </ul>
+                    <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Python
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        JavaScript
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Automation
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
+            </ol>
 
-            <!-- AnsrSource -->
-            <li class="mb-12">
-              <div class="group-card group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 rounded-xl p-4 -m-4 border border-transparent" id="exp-ansrsource">
-                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono" aria-label="Dec 2017 to Apr 2020">
-                  Dec 2017 — Apr 2020
-                </header>
-                <div class="z-10 sm:col-span-6">
-                  <h3 class="font-medium leading-snug text-slate-900 dark:text-slate-200">
-                    <div>
-                      <span class="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 group/link text-base">
-                        <span>Software Engineer · <span class="inline-block">AnsrSource</span></span>
-                      </span>
-                    </div>
-                    <div class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">Bengaluru, Karnataka</div>
-                  </h3>
-                  <ul class="mt-3 text-sm leading-normal space-y-2 text-slate-600 dark:text-slate-400">
-                    <li>Developed internal automation software in Python, JavaScript, and VBA to eliminate manual bottlenecks across engineering teams.</li>
-                    <li>Served as technical subject-matter expert, translating complex engineering principles into streamlined software specifications.</li>
-                  </ul>
-                  <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Python</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">JavaScript</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Automation</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-
-          </ol>
-
-          <!-- Full Resume Link -->
-          <div class="mt-12">
-            <a class="inline-flex items-center font-semibold leading-tight text-slate-900 dark:text-slate-200 group" href="resume.pdf" download="Akshay_Anvekar_Resume.pdf" id="link-full-resume">
-              <span class="border-b border-transparent pb-px transition group-hover:border-teal-600 dark:group-hover:border-teal-300 motion-reduce:transition-none">
-                View Full Résumé (PDF)
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-            </a>
-          </div>
-        </section>
-
-        <!-- SECTION: PROJECTS -->
-        <section id="projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
-          <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">Projects</h2>
-          </div>
-
-          <ol class="group/list">
-            <li class="mb-12">
-              <!-- Strictly non-clickable project card as requested -->
-              <div class="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 rounded-xl p-5 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/40 shadow-xs" id="project-edge-ai">
-                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono" aria-label="Year 2025">
-                  2025
-                </header>
-                <div class="z-10 sm:col-span-6">
-                  <h3 class="font-semibold leading-snug text-slate-900 dark:text-slate-100 text-base select-text" id="project-edge-ai-title">
-                    <span>Self-Hosted Edge AI Agent on NVIDIA Jetson</span>
-                  </h3>
-                  <p class="mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400">
-                    Architected and deployed a private, air-gapped AI agent running on physical NVIDIA Jetson hardware. Utilized <strong class="text-slate-800 dark:text-slate-300 font-medium">llama.cpp and CUDA</strong> acceleration to serve quantized open-weight LLMs locally with full support for autonomous tool calling and structured outputs.
-                  </p>
-                  <ul class="mt-2 text-sm leading-normal space-y-1.5 text-slate-600 dark:text-slate-400">
-                    <li>Packaged the model inference server, embedded vector database, REST API gateway, and chat interface into multi-stage Docker containers for offline resilience.</li>
-                    <li>Fine-tuned quantization precision (4-bit/5-bit AWQ &amp; GGUF) and KV cache context windowing to achieve optimal token throughput within constrained edge GPU VRAM limits.</li>
-                  </ul>
-                  <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">llama.cpp</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">CUDA</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">NVIDIA Jetson</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Vector DB</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Docker</li>
-                    <li class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">Edge AI</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-          </ol>
-        </section>
-
-        <!-- SECTION: SKILLS & ARCHITECTURE -->
-        <section id="skills" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Skills and certifications">
-          <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">Skills &amp; Architecture</h2>
-          </div>
-
-          <!-- Cloud Certification Badge -->
-          <div class="mb-8 rounded-xl border border-teal-600/30 dark:border-teal-500/20 bg-gradient-to-r from-teal-500/10 to-slate-100 dark:from-teal-950/40 dark:to-slate-900/40 p-5 shadow-xs" id="card-certification">
-            <div class="flex items-start gap-4">
-              <div class="rounded-lg bg-teal-600/10 dark:bg-teal-500/15 p-2.5 text-teal-700 dark:text-teal-300 shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            <!-- Full Resume Link -->
+            <div class="mt-12">
+              <a
+                class="inline-flex items-center font-semibold leading-tight text-slate-900 dark:text-slate-200 group"
+                href="resume.pdf"
+                download="Akshay_Resume.pdf"
+                id="link-full-resume"
+              >
+                <span
+                  class="border-b border-transparent pb-px transition group-hover:border-teal-600 dark:group-hover:border-teal-300 motion-reduce:transition-none"
+                >
+                  View Full Résumé (PDF)
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
+              </a>
+            </div>
+          </section>
+
+          <!-- SECTION: PROJECTS -->
+          <section
+            id="projects"
+            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            aria-label="Selected projects"
+          >
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">Projects</h2>
+            </div>
+
+            <ol class="group/list">
+              <li class="mb-12">
+                <!-- Strictly non-clickable project card as requested -->
+                <div
+                  class="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 rounded-xl p-5 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/40 shadow-xs"
+                  id="project-edge-ai"
+                >
+                  <header
+                    class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 font-mono"
+                    aria-label="Year 2025"
+                  >
+                    2025
+                  </header>
+                  <div class="z-10 sm:col-span-6">
+                    <h3
+                      class="font-semibold leading-snug text-slate-900 dark:text-slate-100 text-base select-text"
+                      id="project-edge-ai-title"
+                    >
+                      <span>Self-Hosted Edge AI Agent on NVIDIA Jetson</span>
+                    </h3>
+                    <p class="mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400">
+                      Architected and deployed a private, air-gapped AI agent running on physical NVIDIA Jetson
+                      hardware. Utilized
+                      <strong class="text-slate-800 dark:text-slate-300 font-medium">llama.cpp and CUDA</strong>
+                      acceleration to serve quantized open-weight LLMs locally with full support for autonomous tool
+                      calling and structured outputs.
+                    </p>
+                    <ul class="mt-2 text-sm leading-normal space-y-1.5 text-slate-600 dark:text-slate-400">
+                      <li>
+                        Packaged the model inference server, embedded vector database, REST API gateway, and chat
+                        interface into multi-stage Docker containers for offline resilience.
+                      </li>
+                      <li>
+                        Fine-tuned quantization precision (4-bit/5-bit AWQ &amp; GGUF) and KV cache context windowing to
+                        achieve optimal token throughput within constrained edge GPU VRAM limits.
+                      </li>
+                    </ul>
+                    <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        llama.cpp
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        CUDA
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        NVIDIA Jetson
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Vector DB
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Docker
+                      </li>
+                      <li
+                        class="rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300"
+                      >
+                        Edge AI
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <!-- SECTION: SKILLS & ARCHITECTURE -->
+          <section
+            id="skills"
+            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            aria-label="Skills and certifications"
+          >
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">
+                Skills &amp; Architecture
+              </h2>
+            </div>
+
+            <!-- Cloud Certification Badge -->
+            <div
+              class="mb-8 rounded-xl border border-teal-600/30 dark:border-teal-500/20 bg-gradient-to-r from-teal-500/10 to-slate-100 dark:from-teal-950/40 dark:to-slate-900/40 p-5 shadow-xs"
+              id="card-certification"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="rounded-lg bg-teal-600/10 dark:bg-teal-500/15 p-2.5 text-teal-700 dark:text-teal-300 shrink-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs uppercase font-mono tracking-wider text-teal-700 dark:text-teal-400 font-medium">
+                    Official Certification
+                  </div>
+                  <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100 mt-0.5">
+                    Google Cloud Certified — Professional Cloud Architect
+                  </h3>
+                  <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">
+                    Verification ID: <span class="text-slate-900 dark:text-slate-200 font-semibold">74961</span>
+                  </p>
+                </div>
               </div>
+            </div>
+
+            <div class="space-y-6 text-sm">
               <div>
-                <div class="text-xs uppercase font-mono tracking-wider text-teal-700 dark:text-teal-400 font-medium">Official Certification</div>
-                <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100 mt-0.5">Google Cloud Certified — Professional Cloud Architect</h3>
-                <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">Verification ID: <span class="text-slate-900 dark:text-slate-200 font-semibold">74961</span></p>
+                <h3
+                  class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2"
+                >
+                  AI &amp; Machine Learning
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Vertex AI (Gemini)</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Google ADK (Multi-Agent Systems)</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >GCP RAG Corpus</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >LLMs &amp; Fine-Tuning</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Vector Embeddings</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >LangChain</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Hugging Face</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Edge Inference (llama.cpp)</span
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3
+                  class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2"
+                >
+                  Languages &amp; Core Runtimes
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >TypeScript</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >JavaScript (Node.js)</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Python</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Java</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >SQL</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Dart</span
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3
+                  class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2"
+                >
+                  Frameworks &amp; Web Stack
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >NestJS</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >React 19 &amp; Next.js</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Vite 7</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >FastAPI &amp; Flask</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Spring Boot</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >React Native</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Tailwind CSS</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >WebSockets</span
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3
+                  class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2"
+                >
+                  Cloud, Infrastructure &amp; DevOps
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Google Cloud (GCP)</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >AWS</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Docker &amp; Kubernetes (GKE)</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Terraform</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Harness CI/CD</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >GitHub Actions</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Okta SSO</span
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3
+                  class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2"
+                >
+                  Data &amp; Streaming Platforms
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Firestore</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >PostgreSQL</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >BigQuery</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Striim</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Singer &amp; Meltano</span
+                  >
+                  <span
+                    class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs"
+                    >Pub/Sub</span
+                  >
+                </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div class="space-y-6 text-sm">
-            <div>
-              <h3 class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2">AI &amp; Machine Learning</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Vertex AI (Gemini)</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Google ADK (Multi-Agent Systems)</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">GCP RAG Corpus</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">LLMs &amp; Fine-Tuning</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Vector Embeddings</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">LangChain</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Hugging Face</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Edge Inference (llama.cpp)</span>
+          <!-- SECTION: EDUCATION & HONORS -->
+          <section
+            id="education"
+            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            aria-label="Education and honors"
+          >
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">
+                Education &amp; Honors
+              </h2>
+            </div>
+
+            <div class="space-y-10">
+              <!-- Masters -->
+              <div class="group-card rounded-xl p-4 -m-4 border border-transparent" id="edu-masters">
+                <div class="flex justify-between items-baseline">
+                  <h3 class="font-semibold text-slate-900 dark:text-slate-200">
+                    M.E. in Thermal Science &amp; Engineering
+                  </h3>
+                  <span class="text-xs font-mono text-slate-500">Dec 2016</span>
+                </div>
+                <div class="text-xs text-teal-700 dark:text-teal-300 font-mono mt-0.5">
+                  University Visvesvaraya College of Engineering, Bengaluru
+                </div>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-800 dark:text-slate-300">82.2% aggregate.</strong> Master’s Thesis:
+                  <em>A DSMC Analysis of Gas Flows in Microchannel Using OpenFOAM</em>. Presented research at ICAMES-17
+                  International Conference.
+                </p>
+              </div>
+
+              <!-- Bachelors -->
+              <div class="group-card rounded-xl p-4 -m-4 border border-transparent" id="edu-bachelors">
+                <div class="flex justify-between items-baseline">
+                  <h3 class="font-semibold text-slate-900 dark:text-slate-200">B.E. in Mechanical Engineering</h3>
+                  <span class="text-xs font-mono text-slate-500">Aug 2014</span>
+                </div>
+                <div class="text-xs text-teal-700 dark:text-teal-300 font-mono mt-0.5">
+                  Acharya Institute of Technology, Bengaluru
+                </div>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                  <strong class="text-slate-800 dark:text-slate-300">70.49% aggregate.</strong> Final-year project:
+                  <em>Tree Climber Mechanism</em>.
+                </p>
+              </div>
+
+              <!-- Honors & Activities -->
+              <div class="pt-4 border-t border-slate-200 dark:border-slate-800/80" id="honors-block">
+                <h3
+                  class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-3"
+                >
+                  Honors &amp; Awards
+                </h3>
+                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                  <li class="flex items-start gap-2">
+                    <span class="text-teal-600 dark:text-teal-400">✦</span>
+                    <span
+                      ><strong class="text-slate-800 dark:text-slate-200">Best Outgoing Student</strong> — Department of
+                      Mechanical Engineering</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-teal-600 dark:text-teal-400">✦</span>
+                    <span
+                      ><strong class="text-slate-800 dark:text-slate-200">Best Engineering Project</strong> Award —
+                      Department of Mechanical Engineering</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-teal-600 dark:text-teal-400">✦</span>
+                    <span
+                      ><strong class="text-slate-800 dark:text-slate-200">District-Level Winner</strong> at ESIC 2014,
+                      organized by ISSRD</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-teal-600 dark:text-teal-400">✦</span>
+                    <span
+                      >Presented Master’s research at
+                      <strong class="text-slate-800 dark:text-slate-200">ICAMES-17</strong> International
+                      Conference</span
+                    >
+                  </li>
+                </ul>
               </div>
             </div>
+          </section>
 
-            <div>
-              <h3 class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2">Languages &amp; Core Runtimes</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">TypeScript</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">JavaScript (Node.js)</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Python</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Java</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">SQL</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Dart</span>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2">Frameworks &amp; Web Stack</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">NestJS</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">React 19 &amp; Next.js</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Vite 7</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">FastAPI &amp; Flask</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Spring Boot</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">React Native</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Tailwind CSS</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">WebSockets</span>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2">Cloud, Infrastructure &amp; DevOps</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Google Cloud (GCP)</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">AWS</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Docker &amp; Kubernetes (GKE)</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Terraform</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Harness CI/CD</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">GitHub Actions</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Okta SSO</span>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-2">Data &amp; Streaming Platforms</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Firestore</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">PostgreSQL</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">BigQuery</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">MongoDB</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Striim</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Singer &amp; Meltano</span>
-                <span class="rounded bg-white dark:bg-slate-800/80 px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/50 shadow-xs">Pub/Sub</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- SECTION: EDUCATION & HONORS -->
-        <section id="education" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Education and honors">
-          <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-50/85 dark:bg-slate-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-slate-200">Education &amp; Honors</h2>
-          </div>
-
-          <div class="space-y-10">
-            <!-- Masters -->
-            <div class="group-card rounded-xl p-4 -m-4 border border-transparent" id="edu-masters">
-              <div class="flex justify-between items-baseline">
-                <h3 class="font-semibold text-slate-900 dark:text-slate-200">M.E. in Thermal Science &amp; Engineering</h3>
-                <span class="text-xs font-mono text-slate-500">Dec 2016</span>
-              </div>
-              <div class="text-xs text-teal-700 dark:text-teal-300 font-mono mt-0.5">University Visvesvaraya College of Engineering, Bengaluru</div>
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                <strong class="text-slate-800 dark:text-slate-300">82.2% aggregate.</strong> Master’s Thesis: <em>A DSMC Analysis of Gas Flows in Microchannel Using OpenFOAM</em>. Presented research at ICAMES-17 International Conference.
-              </p>
-            </div>
-
-            <!-- Bachelors -->
-            <div class="group-card rounded-xl p-4 -m-4 border border-transparent" id="edu-bachelors">
-              <div class="flex justify-between items-baseline">
-                <h3 class="font-semibold text-slate-900 dark:text-slate-200">B.E. in Mechanical Engineering</h3>
-                <span class="text-xs font-mono text-slate-500">Aug 2014</span>
-              </div>
-              <div class="text-xs text-teal-700 dark:text-teal-300 font-mono mt-0.5">Acharya Institute of Technology, Bengaluru</div>
-              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                <strong class="text-slate-800 dark:text-slate-300">70.49% aggregate.</strong> Final-year project: <em>Tree Climber Mechanism</em>.
-              </p>
-            </div>
-
-            <!-- Honors & Activities -->
-            <div class="pt-4 border-t border-slate-200 dark:border-slate-800/80" id="honors-block">
-              <h3 class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-semibold mb-3">Honors &amp; Awards</h3>
-              <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2">
-                <li class="flex items-start gap-2">
-                  <span class="text-teal-600 dark:text-teal-400">✦</span>
-                  <span><strong class="text-slate-800 dark:text-slate-200">Best Outgoing Student</strong> — Department of Mechanical Engineering</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-teal-600 dark:text-teal-400">✦</span>
-                  <span><strong class="text-slate-800 dark:text-slate-200">Best Engineering Project</strong> Award — Department of Mechanical Engineering</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-teal-600 dark:text-teal-400">✦</span>
-                  <span><strong class="text-slate-800 dark:text-slate-200">District-Level Winner</strong> at ESIC 2014, organized by ISSRD</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-teal-600 dark:text-teal-400">✦</span>
-                  <span>Presented Master’s research at <strong class="text-slate-800 dark:text-slate-200">ICAMES-17</strong> International Conference</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer class="max-w-md pb-16 text-xs text-slate-500 sm:pb-0" id="main-footer">
-          <p>
-            Designed in the spirit of <a href="https://brittanychiang.com" target="_blank" rel="noreferrer noopener" class="font-medium text-slate-700 dark:text-slate-400 hover:text-teal-700 dark:hover:text-teal-300 focus-visible:text-teal-700">Brittany Chiang</a>. Built with semantic HTML, modern Tailwind CSS, and custom cursor spotlight interactions.
-          </p>
-          <p class="mt-3">
-            Source resume maintained in LaTeX with automated PDF generation via GitHub Actions &amp; Node.js.
-          </p>
-        </footer>
-
-      </main>
+          <!-- FOOTER -->
+          <footer class="max-w-md pb-16 text-xs text-slate-500 sm:pb-0" id="main-footer">
+            <p class="mt-3">
+              Source resume maintained in LaTeX with automated PDF generation via GitHub Actions &amp; Node.js.
+            </p>
+          </footer>
+        </main>
+      </div>
     </div>
-  </div>
 
-  <!-- PDF VIEWER MODAL -->
-  <div id="pdf-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 md:p-8" role="dialog" aria-modal="true" aria-labelledby="pdf-modal-title">
-    <div class="relative flex h-full max-h-[90vh] w-full max-w-5xl flex-col rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl overflow-hidden">
-      <!-- Modal Header -->
-      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-6 py-4 bg-slate-50/90 dark:bg-slate-900/90">
-        <div class="flex items-center gap-3">
-          <span class="rounded bg-teal-100 dark:bg-teal-400/10 px-2.5 py-1 text-xs font-mono font-medium text-teal-800 dark:text-teal-300">PDF</span>
-          <h3 id="pdf-modal-title" class="text-sm font-semibold text-slate-900 dark:text-slate-200">Akshay_Anvekar_Resume.pdf</h3>
+    <!-- PDF VIEWER MODAL -->
+    <div
+      id="pdf-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 md:p-8"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="pdf-modal-title"
+    >
+      <div
+        class="relative flex h-full max-h-[90vh] w-full max-w-5xl flex-col rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl overflow-hidden"
+      >
+        <!-- Modal Header -->
+        <div
+          class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-6 py-4 bg-slate-50/90 dark:bg-slate-900/90"
+        >
+          <div class="flex items-center gap-3">
+            <span
+              class="rounded bg-teal-100 dark:bg-teal-400/10 px-2.5 py-1 text-xs font-mono font-medium text-teal-800 dark:text-teal-300"
+              >PDF</span
+            >
+            <h3 id="pdf-modal-title" class="text-sm font-semibold text-slate-900 dark:text-slate-200">
+              Akshay_Anvekar_Resume.pdf
+            </h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <a
+              href="resume.pdf"
+              download="Akshay_Resume.pdf"
+              class="rounded-md bg-teal-600/10 dark:bg-teal-500/10 border border-teal-600/30 dark:border-teal-500/30 px-3 py-1.5 text-xs font-medium text-teal-800 dark:text-teal-300 hover:bg-teal-600/20 dark:hover:bg-teal-500/20 transition-colors inline-flex items-center gap-1.5"
+              id="modal-download-btn"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 3a.75.75 0 01.75-.75h10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Download PDF
+            </a>
+            <button
+              id="btn-close-pdf-modal"
+              class="rounded-md p-1.5 text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors"
+              aria-label="Close modal"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path
+                  d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 001.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="flex items-center gap-2">
-          <a href="resume.pdf" download="Akshay_Anvekar_Resume.pdf" class="rounded-md bg-teal-600/10 dark:bg-teal-500/10 border border-teal-600/30 dark:border-teal-500/30 px-3 py-1.5 text-xs font-medium text-teal-800 dark:text-teal-300 hover:bg-teal-600/20 dark:hover:bg-teal-500/20 transition-colors inline-flex items-center gap-1.5" id="modal-download-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
-              <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75-.75h10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
-            </svg>
-            Download PDF
-          </a>
-          <button id="btn-close-pdf-modal" class="rounded-md p-1.5 text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors" aria-label="Close modal">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-              <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 001.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-            </svg>
-          </button>
+        <!-- Modal Content (PDF Object / Embed) -->
+        <div class="flex-1 bg-slate-100 dark:bg-slate-950 p-1">
+          <object
+            data="resume.pdf"
+            type="application/pdf"
+            class="h-full w-full rounded-b-xl"
+            title="Akshay Anvekar Resume PDF"
+          >
+            <div
+              class="flex h-full flex-col items-center justify-center p-8 text-center text-slate-600 dark:text-slate-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-12 h-12 text-slate-400 dark:text-slate-600 mb-3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                />
+              </svg>
+              <p class="text-base text-slate-900 dark:text-slate-200 font-medium">
+                Inline PDF preview is restricted by browser security inside this frame.
+              </p>
+              <p class="text-sm text-slate-500 mt-1 max-w-sm">
+                You can download the full PDF directly or open it in a dedicated browser tab.
+              </p>
+              <div class="mt-6 flex gap-3">
+                <a
+                  href="resume.pdf"
+                  download="Akshay_Resume.pdf"
+                  class="rounded-md bg-teal-600/20 dark:bg-teal-400/20 border border-teal-600/40 dark:border-teal-400/40 px-4 py-2 text-xs font-semibold text-teal-800 dark:text-teal-300 hover:bg-teal-600/30"
+                  >Download PDF</a
+                >
+                <a
+                  href="resume.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  class="rounded-md bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700"
+                  >Open in New Tab ↗</a
+                >
+              </div>
+            </div>
+          </object>
         </div>
       </div>
-      <!-- Modal Content (PDF Object / Embed) -->
-      <div class="flex-1 bg-slate-100 dark:bg-slate-950 p-1">
-        <object data="resume.pdf" type="application/pdf" class="h-full w-full rounded-b-xl" title="Akshay Anvekar Resume PDF">
-          <div class="flex h-full flex-col items-center justify-center p-8 text-center text-slate-600 dark:text-slate-400">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-slate-400 dark:text-slate-600 mb-3">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-            </svg>
-            <p class="text-base text-slate-900 dark:text-slate-200 font-medium">Inline PDF preview is restricted by browser security inside this frame.</p>
-            <p class="text-sm text-slate-500 mt-1 max-w-sm">You can download the full PDF directly or open it in a dedicated browser tab.</p>
-            <div class="mt-6 flex gap-3">
-              <a href="resume.pdf" download="Akshay_Anvekar_Resume.pdf" class="rounded-md bg-teal-600/20 dark:bg-teal-400/20 border border-teal-600/40 dark:border-teal-400/40 px-4 py-2 text-xs font-semibold text-teal-800 dark:text-teal-300 hover:bg-teal-600/30">Download PDF</a>
-              <a href="resume.pdf" target="_blank" rel="noopener" class="rounded-md bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">Open in New Tab ↗</a>
-            </div>
-          </div>
-        </object>
-      </div>
     </div>
-  </div>
 
-  <!-- Interactive JavaScript: Theme Toggle, Spotlight, Scrollspy, and Modal -->
-  <script>
-    // 1. Theme Toggle System
-    const htmlEl = document.documentElement;
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const themeStatusText = document.getElementById('theme-status-text');
+    <!-- Interactive JavaScript: Theme Toggle, Spotlight, Scrollspy, and Modal -->
+    <script>
+      // 1. Theme Toggle System
+      const htmlEl = document.documentElement;
+      const themeToggleBtn = document.getElementById('theme-toggle-btn');
+      const themeStatusText = document.getElementById('theme-status-text');
 
-    // Initialize theme based on preference or saved localStorage
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') {
-      htmlEl.classList.remove('dark');
-      if (themeStatusText) themeStatusText.textContent = 'Light';
-    } else {
-      htmlEl.classList.add('dark');
-      if (themeStatusText) themeStatusText.textContent = 'Dark';
-    }
+      // Initialize theme based on preference or saved localStorage
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'light') {
+        htmlEl.classList.remove('dark');
+        if (themeStatusText) themeStatusText.textContent = 'Light';
+      } else {
+        htmlEl.classList.add('dark');
+        if (themeStatusText) themeStatusText.textContent = 'Dark';
+      }
 
-    if (themeToggleBtn) {
-      themeToggleBtn.addEventListener('click', () => {
-        const isDark = htmlEl.classList.contains('dark');
-        if (isDark) {
-          htmlEl.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-          if (themeStatusText) themeStatusText.textContent = 'Light';
-        } else {
-          htmlEl.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-          if (themeStatusText) themeStatusText.textContent = 'Dark';
-        }
-      });
-    }
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          const isDark = htmlEl.classList.contains('dark');
+          if (isDark) {
+            htmlEl.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            if (themeStatusText) themeStatusText.textContent = 'Light';
+          } else {
+            htmlEl.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            if (themeStatusText) themeStatusText.textContent = 'Dark';
+          }
+        });
+      }
 
-    // 2. Mouse Spotlight tracking
-    window.addEventListener('pointermove', (e) => {
-      htmlEl.style.setProperty('--mouse-x', `${e.clientX}px`);
-      htmlEl.style.setProperty('--mouse-y', `${e.clientY}px`);
-    });
-
-    // 3. Scrollspy Navigation for Left Sticky Column
-    const sections = document.querySelectorAll('main section[id]');
-    const navLinks = document.querySelectorAll('#desktop-nav a');
-
-    function updateActiveNav() {
-      const scrollY = window.pageYOffset;
-
-      sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 150;
-        const sectionId = current.getAttribute('id');
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${sectionId}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-
-    window.addEventListener('scroll', updateActiveNav, { passive: true });
-    updateActiveNav();
-
-    // 4. PDF Modal Controls
-    const modal = document.getElementById('pdf-modal');
-    const openBtn = document.getElementById('btn-open-pdf-modal');
-    const closeBtn = document.getElementById('btn-close-pdf-modal');
-
-    if (openBtn && modal && closeBtn) {
-      openBtn.addEventListener('click', () => {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        document.body.style.overflow = 'hidden';
+      // 2. Mouse Spotlight tracking
+      window.addEventListener('pointermove', (e) => {
+        htmlEl.style.setProperty('--mouse-x', `${e.clientX}px`);
+        htmlEl.style.setProperty('--mouse-y', `${e.clientY}px`);
       });
 
-      const closeModal = () => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        document.body.style.overflow = '';
-      };
+      // 3. Scrollspy Navigation for Left Sticky Column
+      const sections = document.querySelectorAll('main section[id]');
+      const navLinks = document.querySelectorAll('#desktop-nav a');
 
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-          closeModal();
-        }
-      });
-    }
-  </script>
-</body>
+      function updateActiveNav() {
+        const scrollY = window.pageYOffset;
+
+        sections.forEach((current) => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 150;
+          const sectionId = current.getAttribute('id');
+
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach((link) => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      updateActiveNav();
+
+      // 4. PDF Modal Controls
+      const modal = document.getElementById('pdf-modal');
+      const openBtn = document.getElementById('btn-open-pdf-modal');
+      const closeBtn = document.getElementById('btn-close-pdf-modal');
+
+      if (openBtn && modal && closeBtn) {
+        openBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+
+        const closeModal = () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = '';
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+          }
+        });
+      }
+    </script>
+  </body>
 </html>

@@ -2,7 +2,5 @@
   "name": "Akshay Anvekar — AI & Full-Stack Engineer",
   "description": "Resume and portfolio of Akshay Anvekar, AI & Full-Stack Engineer based in Bengaluru, specializing in LLMs, Multi-Agent Systems, and Cloud Platforms.",
   "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
