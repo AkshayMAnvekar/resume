@@ -1,0 +1,68 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+\fi
+
+%====================
+% OFFICIAL PUBLIC OVERLEAF TEMPLATE
+% https://www.overleaf.com/latex/templates/data-science-tech-resume-template/zcdmpfxrzjhv
+% 
+%====================
+%
+% Resume template for data scientists, a complement to data-science-tech-cover-letter-template:
+% https://www.overleaf.com/latex/templates/data-science-tech-cover-letter-template/gbrcqktbsfxf
+%
+% Files:        resume.tex: Main file
+%               _header.tex: header code
+%               TLCresume.sty: style file containing formatting details
+%               section/objective: https://www.indeed.com/career-advice/resumes-cover-letters/resume-objective-examples
+%               section/skills: table of skills
+%               section/experience: projects or roles
+%               section/education: schools and stuff
+%               section/activities: optional, could comment out in resume.tex.
+%
+% Editor:       https://github.com/TimmyChan 
+%               https://www.linkedin.com/in/timmy-l-chan/
+%               
+% Last Updated: March 24th, 2022
+%
+%====================
+
+
+\usepackage{TLCresume}
+
+%====================
+% CONTACT INFORMATION
+%====================
+\def\name{Akshay Anvekar} % Name Here
+\def\phone{\href{tel:+919035320309}{+91 9035320309}}
+\def\city{Bengaluru, Karnataka}
+\def\email{AkshayMAnvekar@gmail.com}
+\def\LinkedIn{akshaymanvekar} % linkedin.com/in/______
+\def\github{AkshayMAnvekar} % github username
+\def\role{AI \& Full-Stack Engineer} % JOB TITLE
+
+\input{_header}
+\begin{document}
+\input{sections/objective}
+
+\section{Skills}
+\input{sections/skills}
+
+\section{Technical Experience}
+\input{sections/experience}
+
+\section{Personal Project}
+\input{sections/projects}
+
+\section{Education}
+\input{sections/education}
+
+\section{Awards \& Activities}
+\input{sections/activities}
+
+\section{Hobbies \& Interests}
+\input{sections/hobbies.tex}
+
+\end{document}

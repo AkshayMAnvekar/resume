@@ -1,0 +1,57 @@
+name: Build & Deploy Resume
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Allow the workflow to publish to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deploy at a time; newer pushes cancel in-progress runs
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile resume.tex -> resume.pdf
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+
+      - name: Assemble site (index.html + resume.pdf)
+        run: |
+          mkdir -p _site
+          cp -r site/. _site/
+          cp resume.pdf _site/resume.pdf
+
+      - name: Upload PDF as a downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf
+          path: resume.pdf
+
+      - name: Upload site for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
